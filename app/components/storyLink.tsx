@@ -22,7 +22,7 @@ const Date = styled.div`
 
 const Title = styled.div`
   font-weight: bold;
-  color: #2aa198;
+  color: #2da69a;
 `;
 
 const Body = styled.div`
