@@ -6,7 +6,7 @@ import { Post } from '../../types/types';
 import SiteWrapper from '../../components/siteWrapper';
 import Header from '../../components/Header';
 import styled from 'styled-components';
-import Markdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 
 const StyledPost = styled.div`
   z-index: 10;
@@ -34,11 +34,11 @@ export default function Page ({ params }: {params: { post: string }}) {
     <Background />
     <Header />
       <StyledPost className="w-screen flex flex-col items-center">
-        <div className="flex flex-col h-screen w-screen lg:w-2/5">
-          <Title className="text-xl lg:text-6xl mx-3 lg:mb-4 w-screen">{postContent?.title}</Title>
-          <Markdown className="text-[#fdf6e3] mx-3">
+        <div className="flex flex-col h-screen w-screen md:w-2/5">
+          <Title className="text-xl md:text-6xl mx-3 mf:mb-4 w-screen">{postContent?.title}</Title>
+          <ReactMarkdown className="text-[#fdf6e3] mx-3 markdown">
             {postContent?.content}
-          </Markdown>
+          </ReactMarkdown>
         </div>
       </StyledPost>
   </SiteWrapper>
