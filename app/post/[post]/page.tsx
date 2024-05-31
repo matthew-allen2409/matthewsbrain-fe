@@ -34,8 +34,8 @@ export default function Page ({ params }: {params: { post: string }}) {
     <Background />
     <Header />
       <StyledPost className="w-screen flex flex-col items-center">
-        <div className="flex flex-col h-screen w-screen md:w-2/5">
-          <Title className="text-xl md:text-6xl mx-3 mf:mb-4 w-screen">{postContent?.title}</Title>
+        <div className="flex flex-col h-screen md:w-2/5">
+          <Title className="text-xl md:text-6xl mx-3 mf:mb-4">{postContent?.title}</Title>
           <ReactMarkdown className="text-[#fdf6e3] mx-3 markdown">
             {postContent?.content}
           </ReactMarkdown>

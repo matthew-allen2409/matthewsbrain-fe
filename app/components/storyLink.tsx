@@ -43,7 +43,7 @@ const StoryLink = (props: Props) => (
     </Date>
     <Body className="ml-2">
       <Title>{props.title}</Title>
-      <Markdown className="text-[#fdf6e3] max-w-prose truncate text-wrap">
+      <Markdown className="text-[#fdf6e3] max-w-prose truncate text-wrap truncate">
         {props.body.length > 100 ? `${props.body.substring(0, 500)}...` : props.body}
       </Markdown>
     </Body>
