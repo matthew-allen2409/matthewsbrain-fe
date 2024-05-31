@@ -1,34 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
 import computer from '../images/computer.png';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const InternalDiv = styled(Link)`
-  display: flex;
-  margin-left: 2.5%;
-  height: 8vh;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Source Code Pro', sans-serif;
-`;
-
-const StyledImage = styled(Image)`
-  padding-left: 10px;
-`;
+import { IoLogoGithub } from "react-icons/io";
 
 const Header = () => (
-  <div className="w-screen h-20 flex justify-start items-center  bg-[#002b36]">
-    <InternalDiv href="https://matthewsbrain.com" >
+  <div className="relative w-screen h-20 bg-[#002b36]">
+    <Link
+      className="flex height-8vh ml-4 items-center mt-5 w-fit"
+      href="https://matthewsbrain.com"
+    >
       <h1>My Hobby Website!</h1>
-      <StyledImage
-        className="overflow-hidden"
+      <Image
+        className="overflow-hidden pl-2"
         src={computer}
         alt="computer"
         width={50}
         height={50}
       />
-    </InternalDiv>
+    </Link>
+    <Link className="absolute right-2 md:right-5 bottom-1 md:bottom-5" href="https://github.com/matthew-allen2409">
+      <IoLogoGithub className=" w-5 h-5 md:w-8 md:h-8"/>
+    </Link>
   </div>
 )
 

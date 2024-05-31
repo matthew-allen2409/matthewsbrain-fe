@@ -20,6 +20,10 @@
   }
 }
 
+* {
+  font-family: 'Source Code Pro', sans-serif;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
