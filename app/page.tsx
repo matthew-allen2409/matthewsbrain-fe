@@ -43,7 +43,7 @@ export default function Home() {
   );
 }
 
-async function getPosts() : Promise<Post[]> {
+async function getPosts(): Promise<Post[]> {
   return fetch('https://matthewsbrain.com/api/posts')
     .then(res => res.json())
     .then((data) => {

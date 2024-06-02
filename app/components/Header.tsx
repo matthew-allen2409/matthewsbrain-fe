@@ -5,7 +5,9 @@ import Link from 'next/link';
 import { IoLogoGithub } from "react-icons/io";
 
 const Header = () => (
-  <div className="relative w-screen h-20 bg-[#002b36]">
+  <>
+  <div className="h-20"/>
+  <div className="fixed w-screen h-20 bg-[#002b36] z-20">
     <Link
       className="flex height-8vh ml-4 items-center mt-5 w-fit"
       href="https://matthewsbrain.com"
@@ -23,6 +25,7 @@ const Header = () => (
       <IoLogoGithub className=" w-5 h-5 md:w-8 md:h-8"/>
     </Link>
   </div>
+  </>
 )
 
 export default Header;
