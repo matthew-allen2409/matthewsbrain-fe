@@ -3,6 +3,7 @@ import computer from '../images/computer.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IoLogoGithub } from "react-icons/io";
+import { MdMail } from "react-icons/md";
 
 const Header = () => (
   <>
@@ -21,9 +22,14 @@ const Header = () => (
         height={50}
       />
     </Link>
-    <Link className="absolute right-2 md:right-5 bottom-1 md:bottom-5" href="https://github.com/matthew-allen2409">
-      <IoLogoGithub className=" w-5 h-5 md:w-8 md:h-8"/>
-    </Link>
+    <div className="absolute flex flex-row right-2 md:right-5 bottom-1 md:bottom-5">
+      <Link href="mailto:matthew.allen2409@gmail.com">
+        <MdMail className="w-5 h-5 md:w-8 md:h-8 mr-2"/>
+      </Link>
+      <Link  href="https://github.com/matthew-allen2409">
+        <IoLogoGithub className=" w-5 h-5 md:w-8 md:h-8"/>
+      </Link>
+    </div>
   </div>
   </>
 )
