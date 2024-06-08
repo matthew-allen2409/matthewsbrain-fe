@@ -35,11 +35,9 @@ export default function Page ({ params }: {params: { post: string }}) {
     })
 
     const newComment: Comment = {
-      post_id: comment.post_id,
       name: comment.name,
-      email: comment.email,
       comment: comment.comment,
-      created_at: new Date().toISOString(),
+      created_at: new Date().toISOString()
     }
 
 
@@ -69,7 +67,7 @@ export default function Page ({ params }: {params: { post: string }}) {
           <ReactMarkdown className="text-[#fdf6e3] mx-3 markdown">
             {postContent?.content}
           </ReactMarkdown>
-          <CommentForm post_id={postContent!.post_id} uploadComment={submitComment} />
+          <CommentForm className="mb-2" post_id={postContent!.post_id} uploadComment={submitComment} />
           <CommentWrapper comments={comments} />
         </div>
       </StyledPost>

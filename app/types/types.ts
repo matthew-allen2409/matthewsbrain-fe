@@ -6,9 +6,7 @@ export interface Post {
 }
 
 export interface Comment {
-  post_id: number;
   name: string;
-  email: string
   comment: string;
   created_at: string;
 }

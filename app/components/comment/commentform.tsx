@@ -1,9 +1,10 @@
 "use client"
 
 import React from 'react'
-import { Comment, CommentInput } from '../../types/types'
+import { CommentInput } from '../../types/types'
 
 interface Props {
+  className?: string;
   post_id: number;
   uploadComment: (comment: CommentInput) => void;
 }
@@ -24,7 +25,7 @@ const CommentForm = (props: Props) => {
   }
 
   return (
-    <div className="flex flex-col w-full">
+    <div className={"flex flex-col w-full " + props.className}>
       <form className="flex flex-col w-full">
         <label className="text-lg">Name:</label>
         <input className="border-2 border-gray-500" onChange={(e) => setName(e.target.value)} value={name} type="text" name="name" />

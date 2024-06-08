@@ -8,7 +8,7 @@ interface Props {
 
 const Comment = (props: Props) => {
   return (
-    <div className="border-2 w-full mt-2 min-h-32 rounded-lg bg-black border-[#859900]">
+    <div className="border-2 w-full mb-2 min-h-32 rounded-lg bg-black border-[#859900]">
       <div className="flex row">
         <h3 className="font-bold mx-2">{props.name}</h3>
         •
