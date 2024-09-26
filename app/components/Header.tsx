@@ -23,7 +23,7 @@ const Header = () => (
       />
     </Link>
     <div className="absolute flex flex-row right-2 md:right-5 bottom-1 md:bottom-5">
-      <Link href="mailto:matthew.allen2409@gmail.com">
+      <Link href="mailto:matthew.allen@matthewsbrain.com">
         <MdMail className="w-5 h-5 md:w-8 md:h-8 mr-2"/>
       </Link>
       <Link  href="https://github.com/matthew-allen2409">

@@ -5,6 +5,7 @@ import React from "react";
 import Header from "./components/Header";
 import SiteWrapper from "./components/siteWrapper";
 import StoryLink from "./components/storyLink";
+import Footer from "./components/Footer";
 
 interface Post {
   post_id: number;
@@ -25,8 +26,8 @@ export default function Home() {
 
   return (
     <SiteWrapper>
-      <Background />
       <Header />
+      <Background />
       <div
         className="flex flex-col items-center w-screen"
       >
@@ -39,6 +40,7 @@ export default function Home() {
           />
         )) || 'Loading...'}
       </div>
+      <Footer />
     </SiteWrapper>
   );
 }
