@@ -8,7 +8,7 @@ import { MdMail } from "react-icons/md";
 const Header = () => (
   <>
   <div className="h-20"/>
-  <div className="fixed w-screen h-20 bg-[#002b36] z-20">
+  <div className="fixed w-dvw h-20 bg-[#002b36] z-20">
     <Link
       className="flex height-8vh ml-4 items-center mt-5 w-fit"
       href="https://matthewsbrain.com"
