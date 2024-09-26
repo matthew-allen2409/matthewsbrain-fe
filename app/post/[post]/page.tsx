@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import CommentForm from '../../components/comment/commentform';
 import CommentWrapper from '../../components/comment/commentwrapper';
+import Footer from '../../components/Footer';
 
 const StyledPost = styled.div`
   z-index: 10;
@@ -70,6 +71,7 @@ export default function Page ({ params }: {params: { post: string }}) {
           <CommentForm className="mb-2" post_id={postContent!.post_id} uploadComment={submitComment} />
           <CommentWrapper comments={comments} />
         </div>
+        <Footer />
       </StyledPost>
     }
   </SiteWrapper>
