@@ -1,10 +1,20 @@
-import styled from 'styled-components';
+import React from 'react';
 
-const SiteWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: -10;
-`;
+import Background from './Background';
+import Footer from './Footer';
+import Header from './Header';
+
+interface Props {
+  children: React.ReactNode;
+}
+
+const SiteWrapper = ({children}: Props) => (
+  <div className="flex flex-col items-center z-10">
+    <Background />
+    <Header />
+    {children}
+    <Footer />
+  </div>
+);
 
 export default SiteWrapper;

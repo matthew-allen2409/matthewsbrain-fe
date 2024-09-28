@@ -1,15 +1,11 @@
 "use client"
 
 import React from 'react';
-import Background from '../../components/background';
 import { Comment, CommentInput, Post } from '../../types/types';
-import SiteWrapper from '../../components/siteWrapper';
-import Header from '../../components/Header';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import CommentForm from '../../components/comment/commentform';
 import CommentWrapper from '../../components/comment/commentwrapper';
-import Footer from '../../components/Footer';
 
 const StyledPost = styled.div`
   z-index: 10;
@@ -58,9 +54,7 @@ export default function Page ({ params }: {params: { post: string }}) {
   }, [postContent])
 
   return (
-  <SiteWrapper>
-    <Background />
-    <Header />
+  <>
     { postContent &&
       <StyledPost className="w-screen flex flex-col items-center">
         <div className="flex flex-col h-screen md:w-2/5">
@@ -71,10 +65,9 @@ export default function Page ({ params }: {params: { post: string }}) {
           <CommentForm className="mb-2" post_id={postContent!.post_id} uploadComment={submitComment} />
           <CommentWrapper comments={comments} />
         </div>
-        <Footer />
       </StyledPost>
     }
-  </SiteWrapper>
+  </>
   );
 }
 
