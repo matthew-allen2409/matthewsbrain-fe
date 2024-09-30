@@ -1,31 +1,32 @@
-"use client"
-
 import React from 'react'
-import { CommentInput } from '../../types/types'
+
+import { Comment, CommentInput } from '../../types/types';
+import submitComment from '../../api/uploadComment';
 
 interface Props {
-  className?: string;
   post_id: number;
-  uploadComment: (comment: CommentInput) => void;
+  onSubmitComment: (comment: Comment) => void;
 }
 
-const CommentForm = (props: Props) => {
+const CommentForm = ({ post_id, onSubmitComment }: Props) => {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [comment, setComment] = React.useState('');
 
-  const onSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    props.uploadComment({
-      post_id: props.post_id,
+    const newComment: CommentInput = {
+      post_id: 9,
       name,
       email,
       comment
-    });
+    }
+
+    onSubmitComment(await submitComment(newComment));
   }
 
   return (
-    <div className={"flex flex-col w-full " + props.className}>
+    <div className={"flex flex-col w-full "}>
       <form className="flex flex-col w-full">
         <label className="text-lg">Name: (optional)</label>
         <input className="border-2 border-gray-500" onChange={(e) => setName(e.target.value)} value={name} type="text" name="name" />
@@ -33,7 +34,7 @@ const CommentForm = (props: Props) => {
         <input className="border-2 border-gray-500" value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" />
         <label className="text-lg">Comment:</label>
         <textarea className="border-2 border-gray-500 h-64" value={comment} onChange={(e) => setComment(e.target.value)} name="comment" />
-        <button className="bg-blue-500 text-white mt-2" onClick={onSubmit}>Submit</button>
+        <button className="bg-blue-500 text-white mt-2" onClick={handleSubmit}>Submit</button>
       </form>
     </div>
   )

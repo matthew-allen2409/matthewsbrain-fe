@@ -9,7 +9,7 @@ interface Props {
 }
 
 const SiteWrapper = ({children}: Props) => (
-  <div className="flex flex-col items-center z-10">
+  <div className="flex flex-col grow items-center min-h-full">
     <Background />
     <Header />
     {children}
