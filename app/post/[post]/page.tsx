@@ -1,11 +1,9 @@
 import ReactMarkdown from 'react-markdown';
 import CommentWrapper from '../../components/comment/commentwrapper';
 import fetchPost from '../../api/fetchPost';
-import fetchComments from '../../api/fetchComments';
 
 export default async function Page ({ params }: {params: { post: number }}) {
   const postContent = await fetchPost(params.post);
-  const comments = await fetchComments(params.post);
 
   return (
     <>
@@ -14,7 +12,7 @@ export default async function Page ({ params }: {params: { post: number }}) {
           <ReactMarkdown className="text-[#fdf6e3] mx-3 markdown">
             {postContent.content}
           </ReactMarkdown>
-          <CommentWrapper comments={comments} post_id={params.post}/>
+          <CommentWrapper post_id={Number(params.post)} />
         </div>
     </>
   );

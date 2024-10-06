@@ -1,7 +1,8 @@
 import { Post } from '../types/types';
+import { baseUrl } from './useEnvVars';
 
 async function fetchPost(post_id: number): Promise<Post> {
-  return await fetch(`https://matthewsbrain.com/api/posts/${post_id}`)
+  return await fetch(`${baseUrl}/posts/${post_id}`)
     .then(res => res.json())
     .then((data) => {
       return data;
@@ -13,3 +14,4 @@ async function fetchPost(post_id: number): Promise<Post> {
 }
 
 export default fetchPost;
+

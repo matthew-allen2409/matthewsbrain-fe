@@ -1,22 +1,18 @@
 import { Comment, CommentInput } from '../types/types'
-
+import { baseUrl } from './useEnvVars';
 
 async function submitComment(comment: CommentInput): Promise<Comment> {
-  await fetch(`https://matthewsbrain.com/api/comments`, {
+  console.log('baseUrl', baseUrl);
+  console.log('comment input', comment);
+  return await fetch(`${baseUrl}/comments`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(comment)
-  }).catch((error) => console.log(error));
-
-  const newComment: Comment = {
-    name: comment.name,
-    comment: comment.comment,
-    created_at: new Date().toISOString()
-  }
-
-  return newComment;
+  })
+    .then(res => res.json())
+    .catch((error) => console.log(error));
 }
 
 export default submitComment;
