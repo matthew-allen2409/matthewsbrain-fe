@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { IoLogoGithub } from "react-icons/io";
 import { MdMail } from "react-icons/md";
 import { home } from '../api/useEnvVars';
+import { FaRssSquare } from "react-icons/fa";
 
 const Header = () => (
   <>
@@ -28,8 +29,11 @@ const Header = () => (
           <MdMail className="w-5 h-5 md:w-8 md:h-8 mr-2" />
         </Link>
         <Link href="https://github.com/matthew-allen2409">
-          <IoLogoGithub className=" w-5 h-5 md:w-8 md:h-8" />
+          <IoLogoGithub className=" w-5 h-5 md:w-8 md:h-8 mr-2" />
         </Link>
+      <Link href={"https://matthewsbrain.com/api/rss"} >
+        <FaRssSquare className={"w-5 h-5 md:w-8 md:h-8 mr-2"} />
+      </Link>
       </div>
     </div>
   </>
